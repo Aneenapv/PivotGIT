@@ -28,10 +28,6 @@ public class OntarioLicenseMain {
 		
 		oL.licenseAgeGreaterThan16();
 		
-	
-		
-		
-
 		
 		
 //		System.out.println(" Current License  : "); 
