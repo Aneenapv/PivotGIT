@@ -1,8 +1,14 @@
-package pizza;
+package pizzaBill;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class PizzaShopBill {
+public class PizzaBill {
+
+	double sizePrice = 0;
+	double toppingPrice = 0;
+	double extraCheesePrice = 0;
+
+	Scanner sc = new Scanner(System.in);
 
 	/*
 	 * Write a program to prepare the bill for a pizza shop.
@@ -16,87 +22,74 @@ public class PizzaShopBill {
 	 * should  calculate the final bill as 20+3+1 = $24 and print as
 	 * “Your final bill is $24”
 	 */
-
-	double sizePrice = 0;
-	double toppingPrice = 0;
-	double extraCheesePrice = 0;
-
-	Scanner sc = new Scanner(System.in);
-
+	
 	void pizzaBill() {
 		System.out.println("Enter the size of pizza: ");
-		String sizeOfPizza = sc.next();
-         
-		switch (sizeOfPizza) {
-		case "small":
-		{
+		String size = sc.next();
+		System.out.println("Enter Additional topping: yes or no");
+		String topping = sc.next();
+		System.out.println("Do you want cheese it up : yes or no");
+		String extraCheese = sc.next();
+
+		switch (size) {
+		case "small": {
 			System.out.println("small size pizza is $15");
 			sizePrice = 15;
+			if (topping.equals("yes")) {
+				System.out.println("Peproni topping for small= $2");
+				toppingPrice = sizePrice + 2;
+			} 
+			
+			else if(topping=="no") {
+				System.out.println("No topping added");
+				toppingPrice = sizePrice;
+			}
 		}
 		break;
+		
 		case "medium": {
 
 			System.out.println("medium size pizza is $20");
 			sizePrice = 20;
+			if (topping=="yes") {
+				System.out.println("Peproni topping for medium= $3");
+				toppingPrice = sizePrice + 3;
+			} 
+			else if(topping=="no") {
+				System.out.println("No topping added");
+				toppingPrice = sizePrice;
+			}
 		}
 		break;
+		
 		case "large": {
 
 			System.out.println("large size pizza is $25");
 			sizePrice = 25;
-		}
-		break;
-//		default:
-//			System.out.println("Sorry enter correct size of pizza: small, medium, large");
-//			break;
-		}
-
-		System.out.println("Enter Additional topping: yes or no");
-		String topping = sc.next();
-
-		switch (topping) {
-		
-		case "yes":
-		{
-			if (sizeOfPizza.equals("small"))
-			{
-				System.out.println("Peproni topping for small= $2");
-				toppingPrice = sizePrice + 2;
-			} 
-			else 
-			{
-				System.out.println("Peproni topping for medium and large= $3");
+			if (topping=="yes") {
+				System.out.println("Peproni topping for large= $3");
 				toppingPrice = sizePrice + 3;
-			}
-			
-		}
-			break;
-
-		case "no": {
-			System.out.println("No topping added");
-			toppingPrice = sizePrice;
-		}
-		break;
-
-//		default:
-//			System.out.println("invalid entry for topping");
-//			break;
+			} 
+			else if(topping=="no") {
+				System.out.println("No topping added");
+				toppingPrice = sizePrice;
+		      }
 		}
 
-		System.out.println("Extra cheese added : yes or no");
-		String extraCheese = sc.next();
+		}
+		
 
 		switch (extraCheese) {
 		case "yes": {
 			System.out.println("Extra cheese for any size is $1");
 			extraCheesePrice = toppingPrice + 1;
+			break;
 		}
-		break;
 		case "no": {
 			System.out.println("No extra Cheese");
 			extraCheesePrice = toppingPrice;
+			break;
 		}
-		break;
 
 //		default:
 //			System.out.println("Invalid entry for extra cheese");
@@ -107,3 +100,5 @@ public class PizzaShopBill {
 	}
 
 }
+
+
