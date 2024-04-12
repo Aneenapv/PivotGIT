@@ -13,35 +13,29 @@ public class AmusementParkRide {
 	 */
 
 	double height;
-	int s = 0, n = 50;
+	int maxLimit = 0, numberOfPeople = 50;
+	Scanner sc = new Scanner(System.in);
 
-	void rideRequirements()
-			{
-				
-				for(int i = 1;i<=n; i++)
-				{
-					Scanner sc= new Scanner(System.in);
-					System.out.println();
-					System.out.println(i+" Enter your height  = ");
-					double height = sc.nextDouble();
-		
-				if((height>=90)&&(height<=120))
-				{
-					System.out.println("Please enter into ride: Have Fun");
-					System.out.println();
-					s= s+1;
-					if(s==10)
-					{
-						System.out.println("STOP: Reached maximum limit for this ride");
-						break;
-					}
-					
+	void rideRequirements() {
+
+		for (int i = 1; i <= numberOfPeople; i++) {
+			System.out.println();
+			System.out.println(i + " Enter your height in cm  = ");
+			double height = sc.nextDouble();
+
+			if ((height > 90) && (height < 200)) {
+				System.out.println("Please enter into ride: Have Fun");
+				System.out.println();
+				 maxLimit =  maxLimit + 1;
+				if ( maxLimit == 10) {
+					System.out.println("STOP: Reached maximum limit for this ride");
+					break;
 				}
-				else
-				{
-					System.out.println("you are not allowed to use this ride");
-					System.out.println();
-				}
+
+			} else {
+				System.out.println("you are not allowed to use this ride");
+				System.out.println();
 			}
 		}
+	}
 }
