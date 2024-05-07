@@ -1,8 +1,10 @@
 package abstraction;
 
 public abstract class NationalBank {
-	
+
 	// abstract class is a class which has one or more abstract methods
+	
+	double balance;
 	
 	public void provideLoans()
 	{

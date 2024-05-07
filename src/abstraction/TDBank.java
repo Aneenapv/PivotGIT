@@ -8,10 +8,10 @@ public class TDBank extends NationalBank {
 		
 	}
 	
-	public void provideLoans()
-	{
-		System.out.println("provide loans starting from prime rate 5.2%");
-	}
+//	public void provideLoans()
+//	{
+//		System.out.println("provide loans starting from prime rate 5.2%");
+//	}
 
 	@Override
 	public void provideCheques() {

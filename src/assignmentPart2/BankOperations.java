@@ -1,4 +1,4 @@
-package abstractClassBankOperations;
+package assignmentPart2;
 
 public abstract class BankOperations {
 	

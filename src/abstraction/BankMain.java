@@ -4,7 +4,7 @@ public class BankMain {
 
 	public static void main(String[] args) {
 	
-		// we cannot instantiate national bank bcoz its is abstract class
+		// we cannot instantiate national bank bcoz it is abstract class
 		// but we can create object on appliance class...
 		
 		//its bcoz appliance class does not have any abstract class...
@@ -14,6 +14,7 @@ public class BankMain {
 		
 		NationalBank cibc = new CIBC();
 		
+		//tdbank is referring to object of TD bank
 		NationalBank tdbank = new TDBank(); 
 		// here run time polymorphism comes in effect
 		// child class method - it is an abstract method in superclass,
@@ -21,7 +22,7 @@ public class BankMain {
 		// but the child class has an implementation.
 		// thats why I am invoking overridden child class method
 		tdbank.interestOnSaving();
-		tdbank.provideLoans();
+		tdbank.provideLoans();  
 		
 		System.out.println();
 		
@@ -39,6 +40,13 @@ public class BankMain {
 		tdbank1.provideCheques();
 		tdbank1.provideLoans();
 
+		RBC rbc = new RBC();
+		rbc.interestOnSaving();
+		rbc.linkAccountWithSIN();
+		
+		NBankInterface rbc1 = new RBC ();
+		rbc1.interestOnSaving();
+		//rbc1.linkAccountWithSIN();
 	}
 
 }
