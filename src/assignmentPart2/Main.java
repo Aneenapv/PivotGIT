@@ -1,14 +1,27 @@
 package assignmentPart2;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
-	
-		BankOperations atmbank = new ATM("1020");
-		atmbank.changePinPassword();
 		
-		BankOperations onlinebank = new OnlineBanking("qwertyuiop$");
+      Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter Type of service: ATM or Online Banking : ");
+		String typeOfService = sc.next();
+
+		if (typeOfService.equalsIgnoreCase("ATM")) {
+		BankOperations atmbank = new ATM();
+		 atmbank.changePinPassword();
+		}
+		
+
+	    if(typeOfService.equalsIgnoreCase("OnlineBanking"))
+	   {
+		BankOperations onlinebank = new OnlineBanking();
 		onlinebank.changePinPassword();
 	}
 
+}
 }

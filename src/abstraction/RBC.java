@@ -26,4 +26,10 @@ public class RBC implements NBankInterface,CRA{
 		
 	}
 
+	@Override
+	public void provideTfsa() {
+		System.out.println("TFSA account");
+		
+	}
+
 }

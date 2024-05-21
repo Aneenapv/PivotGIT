@@ -1,18 +1,33 @@
 package assignmentPart1;
 
-public class PersonsAccountDetails {
+public final class PersonsAccountDetails {
 	
 	
-	 String bankAccountNumber;
-	 String nameOfAccountHolder;
-	 double totalFundsAvailable;
+	 private String bankAccountNumber;
+	 private  String nameOfAccountHolder;
+	 private double totalFundsAvailable;
 	 
 
-	private int pin;
-	 private String onlineBankingPassword;
+	 private String pin="1020";
+	 private String onlineBankingPassword= "qwerty";
 		
 		
-	 public PersonsAccountDetails(String bankAccountNumber, String nameOfAccountHolder, double totalFundsAvailable) 
+	 public String getBankAccountNumber() {
+		return bankAccountNumber;
+	}
+
+
+	public String getNameOfAccountHolder() {
+		return nameOfAccountHolder;
+	}
+
+
+	public double getTotalFundsAvailable() {
+		return totalFundsAvailable;
+	}
+
+
+	public PersonsAccountDetails(String bankAccountNumber, String nameOfAccountHolder, double totalFundsAvailable) 
 	    {
 			super();
 			this.bankAccountNumber = bankAccountNumber;
@@ -22,20 +37,17 @@ public class PersonsAccountDetails {
 	     }
 	 
 	 
-
-
-	public int getPin() {
+	public String getPin() {
 		return pin;
 	}
-
-
-	public void setPin(int pin) {
-		this.pin = pin;
+	
+	public void setPin(String newPin) {
+		this.pin = newPin;
 	}
 	
-	public boolean validatePin(int pinEntered)
+	public boolean validatePin(String pinEntered)
 	{
-		if(pin==pinEntered)
+		if((this.pin).equals(pinEntered))
 		{
 			return true;
 		}
@@ -47,19 +59,23 @@ public class PersonsAccountDetails {
 		return onlineBankingPassword;
 	}
 
-
+	
 	public void setOnlineBankingPassword(String onlineBankingPassword) {
 		this.onlineBankingPassword = onlineBankingPassword;
 	}
-	
+
+
 	public boolean validatePassword(String passwordEntered)
 	{
-		if(onlineBankingPassword.equals(passwordEntered))
+		if(this.onlineBankingPassword.equals(passwordEntered))
 		{
 			return true;
 		}
 		return false;
 	}
+
+
+	
 	
 	
 
